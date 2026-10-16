@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Alejo leonel maidana",
+  "editor": "wokwi",
+  "serialMonitor": {
+    "display": "always"
+  },
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-neopixel",
+      "id": "rgb",
+      "top": 120,
+      "left": 220,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:48", "rgb:DIN", "green", [ "h0" ] ],
+    [ "esp:3V3", "rgb:VDD", "red", [ "h0" ] ],
+    [ "esp:GND.1", "rgb:VSS", "black", [ "h0" ] ],
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ]
+  ]
+}
